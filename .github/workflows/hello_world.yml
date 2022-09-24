@@ -1,6 +1,12 @@
 name: hello-world
 
-on: push
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
 
 jobs:
   hello-job:
@@ -8,3 +14,5 @@ jobs:
     steps:
       - name: my-steps
         run: echo "Hello World!"
+      - name: step 2
+        run: pwd
